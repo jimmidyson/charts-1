@@ -14,7 +14,7 @@ GIT_REMOTE_URL ?= https://mesosphere:$(GITHUB_USER_TOKEN)@github.com/mesosphere/
 # - git@github.com:mesosphere/charts.git
 GITHUB_USER := $(shell git remote get-url origin | sed -E 's|.*github.com[/:]([^/]+)/charts.*|\1|')
 
-GIT_REF = $(shell git show-ref -s HEAD)	
+GIT_REF = $(shell git show-ref -s HEAD)
 LAST_COMMIT_MESSAGE := $(shell git reflog -1 | sed 's/^.*: //')
 
 TMPDIR := $(shell mktemp -d)
@@ -83,5 +83,5 @@ $(TMPDIR)/.helm/repository/local/index.yaml: $(HELM)
 ct.lint:
 ifneq (,$(wildcard /teamcity/system/git))
 	$(DRUN) git fetch origin dev
-endif	
+endif
 	$(DRUN) ct lint
