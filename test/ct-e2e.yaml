@@ -1,0 +1,38 @@
+debug: true
+target-branch: dev
+chart-dirs:
+  - stable
+  - staging
+excluded-charts:
+  - common
+  - dex-controller # Moved to a different helm repo
+  - azuredisk-csi-driver
+  - defaultstorageclass
+  - dispatch
+  - gcpdiskprovisioner
+  - kommander
+  - kommander-karma
+  - kommander-thanos
+  - mtls-proxy
+  - dex-k8s-authenticator
+  - flagger
+  - gatekeeper
+  - generic-ingress
+  - istio
+  - knative
+  - kube-oidc-proxy
+  - kudo
+  - nvidia
+  - prometheus-operator
+  - traefik
+  - traefik-forward-auth
+chart-repos:
+  - mesosphere-staging=https://mesosphere.github.io/charts/staging
+  - mesosphere-stable=https://mesosphere.github.io/charts/stable
+  - kubefed-charts=https://raw.githubusercontent.com/kubernetes-sigs/kubefed/master/charts
+  - jetstack-charts=https://charts.jetstack.io
+  - kommander-cluster-lifecycle=https://mesosphere.github.io/kommander-cluster-lifecycle/charts
+  - banzaicloud=https://kubernetes-charts.banzaicloud.com
+  - helm-stable=https://kubernetes-charts.storage.googleapis.com/
+  - dex-controller=https://mesosphere.github.io/dex-controller/charts
+helm-extra-args: --timeout 600
