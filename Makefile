@@ -15,7 +15,7 @@ GIT_REMOTE_URL ?= $(shell git remote get-url origin)
 GITHUB_USER := $(shell git remote get-url origin | sed -E 's|.*github.com[/:]([^/]+)/charts.*|\1|')
 
 GIT_REF = $(shell git rev-parse HEAD)	
-LAST_COMMIT_MESSAGE := $(shell git reflog -1 | sed 's/^.*: //')
+LAST_COMMIT_MESSAGE := $(shell git log -1 --pretty=format:'%B')
 NON_DOCS_FILES := $(filter-out docs,$(wildcard *))
 
 TMPDIR := $(shell mktemp -d)
