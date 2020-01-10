@@ -3,7 +3,7 @@ image:
   tag: 1.176.3
   pullPolicy: IfNotPresent
 replicas: 1
-logoutRedirectPath: /ops/landing
+logoutRedirectPath: /ops/landing/logout
 clusterPollingInterval: 3000
 hostPollingInterval: 3000
 clusterPollingThrottleFactor: 1
