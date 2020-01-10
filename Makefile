@@ -62,6 +62,7 @@ publish:
 	git add .
 	git commit -m "$(LAST_COMMIT_MESSAGE)"
 	git push publish master
+	git checkout -
 
 $(HELM):
 ifeq ($(HELM),$(TMPDIR)/helm)
